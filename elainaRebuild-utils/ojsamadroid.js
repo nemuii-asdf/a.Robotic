@@ -1,4 +1,4 @@
-// This is a slight modification of Francesco149's ojsama for osu!droid'pp system usage by NeroYuki
+// This is a slight modification of Francesco149's ojsama for osu!droid'pp system usage by NeroYuki and Kiyozin_0
 // All credit given to Francesco149
 
 // this is free and unencumbered software released into the public
