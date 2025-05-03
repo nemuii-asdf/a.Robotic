@@ -117,7 +117,7 @@ module.exports.lookupUser = (option) => {
         let resultObjects = await proberConnection(req, 1)
         
         while (resultObjects[0].cmd == "retry" && connection_attempt <= 3) {
-            log.toConsole('error in previous probing attempt, retrying...')
+            log.toConsole('error in previous attempts, retrying....')
             connection_attempt += 1;
             resultObjects = await proberConnection(req, 1)
         } 
@@ -143,7 +143,7 @@ module.exports.getUserInfo = (option) => {
             reject()
         }
         if (option.uid === undefined) {
-            log.errConsole("Insufficient option")
+            log.errConsole("Insufficient options")
             reject()
         }
         let req = ""; let min_ptt = 0; let max_ptt = 0
@@ -230,7 +230,7 @@ module.exports.getScoreInfo = (option) => {
 
         let scoreData = []
         resultObjects.forEach((result_entry) => {
-            //TODO: beautify the output (replace field's value with coresponding string (clear_type, character, difficulty , song (in en)))
+            //TODO: beautify the output (replace field's value with corresponding strings (clear_type, character, difficulty , song (in en)))
             if (result_entry.cmd == "scores") scoreData.push(result_entry.data)
         })
         if (scoreData.length == 0) {
